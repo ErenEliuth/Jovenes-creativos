@@ -1,0 +1,115 @@
+/* Estilo general */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Estilo del menú */
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+}
+
+.menu-center {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-center a, .menu-right a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.menu-right a {
+  margin-left: auto;
+}
+
+/* Imagen de fondo con texto */
+.hero {
+  position: relative;
+  height: 70vh; /* Cambiado de 100vh a 70vh para reducir la altura */
+  background: url('/Img/free-photo-of-paisaje-pintoresco-de-otono-en-una-cantera-de-chequia.jpeg') no-repeat center center/cover; /* Fondo ajustado */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-content {
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
+  padding: 20px 40px;
+  border-radius: 10px;
+  max-width: 600px;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem; /* Tamaño reducido del texto principal */
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 1rem; /* Tamaño reducido del texto secundario */
+  margin-bottom: 20px;
+}
+
+.hero-content .btn {
+  text-decoration: none;
+  background-color: #ff6f61;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.hero-content .btn:hover {
+  background-color: #ff3e2e;
+}
+
+#destinos {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#destinos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.destino-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: white;
+  text-align: center;
+  padding: 10px;
+}
+
+.destino-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.destino-card h3 {
+  margin: 10px 0;
+  font-size: 1.2rem;
+  color: #0077b6;
+}
+
+.destino-card p {
+  margin: 5px 0;
+  color: #555;
+}

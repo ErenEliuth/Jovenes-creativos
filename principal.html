@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal</title>
+    <link rel="stylesheet" href="principal.css">
+</head>
+<body>
+    <header>
+        <nav class="menu">
+            <div class="logo">
+                <img src="logo.png" alt="Logo" />
+            </div>
+            <ul class="menu-center">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Nosotros</a></li>
+                <li><a href="#">Viajes</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+            <div class="menu-right">
+                <a href="#" id="cerrar-sesion">Cerrar Sesión</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Imagen de fondo con texto -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>¡Explora el Mundo con Nosotros!</h1>
+            <p>Descubre lugares increíbles y crea recuerdos inolvidables.</p>
+            <a href="#viajes" class="btn">Explorar Destinos</a>
+        </div>
+    </section>
+    
+    <main>
+        <section id="destinos">
+            <h1>Destinos Turísticos</h1>
+            <div id="destinos-container">
+                <!-- Aquí se cargarán los destinos desde la API -->
+            </div>
+        </section>
+    </main>
+    
+
+    <script src="principal.js"></script>
+</body>
+</html>

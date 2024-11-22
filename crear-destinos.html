@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Destinos</title>
+    <link rel="stylesheet" href="crear-destinos.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="inicio.html">Inicio</a>
+            <a href="crear-destinos.html" class="active">Crear Destino</a>
+            <a href="ver-destinos.html">Ver Destinos</a>
+            <a href="#" id="logout">Cerrar Sesión</a>
+        </nav>
+    </header>
+    <main>
+        <section class="form-container">
+            <h1>Crear un Nuevo Destino Turístico</h1>
+            <form id="crear-destino-form">
+                <label for="nombre">Nombre del Lugar</label>
+                <input type="text" id="nombre" placeholder="Escribe el nombre del lugar" autocomplete="off">
+                <ul id="suggestions"></ul>
+
+                <label for="imagen">Subir una Foto</label>
+                <input type="file" id="imagen" accept="image/*">
+
+                <label for="estrellas">Valoración (1-5 Estrellas)</label>
+                <select id="estrellas">
+                    <option value="1">⭐</option>
+                    <option value="2">⭐⭐</option>
+                    <option value="3">⭐⭐⭐</option>
+                    <option value="4">⭐⭐⭐⭐</option>
+                    <option value="5">⭐⭐⭐⭐⭐</option>
+                </select>
+
+                <button type="submit">Subir Destino</button>
+            </form>
+        </section>
+    </main>
+    <script src="crear-destinos.js"></script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container" id="loginContainer">
+        <h1>Iniciar Sesión</h1>
+        <form id="loginForm">
+            <label for="loginEmail">Correo Electrónico:</label>
+            <input type="email" id="loginEmail" required>
+            <label for="loginPassword">Contraseña:</label>
+            <input type="password" id="loginPassword" required>
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+        <p>¿No tienes una cuenta? <button id="showRegister" class="link-button">Regístrate</button></p>
+    </div>
+
+    <div class="container" id="registerContainer" style="display: none;">
+        <h1>Crear Cuenta</h1>
+        <form id="registerForm">
+            <label for="nombres">Nombres:</label>
+            <input type="text" id="nombres" required>
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" id="apellidos" required>
+            <label for="registerEmail">Correo Electrónico:</label>
+            <input type="email" id="registerEmail" required>
+            <label for="registerPassword">Contraseña:</label>
+            <input type="password" id="registerPassword" required>
+            <label for="genero">Género:</label>
+            <select id="genero" required>
+                <option value="Masculino">Masculino</option>
+                <option value="Femenino">Femenino</option>
+                <option value="Otro">Otro</option>
+            </select>
+            <button type="submit">Registrar</button>
+        </form>
+        <p>¿Ya tienes una cuenta? <button id="showLogin" class="link-button">Inicia Sesión</button></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+CSSSSSSSSSSSSSSSS
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-size: 14px;
+    color: #555;
+    text-align: left;
+}
+
+input, select, button {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.link-button {
+    background: none;
+    color: #007bff;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 14px;
+}
+
+.link-button:hover {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+
+
+JS
+
+
+// Selección de contenedores
+const loginContainer = document.getElementById('loginContainer');
+const registerContainer = document.getElementById('registerContainer');
+
+// Mostrar formulario de registro
+document.getElementById('showRegister').addEventListener('click', () => {
+    loginContainer.style.display = 'none'; // Oculta el contenedor de inicio de sesión
+    registerContainer.style.display = 'block'; // Muestra el contenedor de registro
+});
+
+// Mostrar formulario de inicio de sesión
+document.getElementById('showLogin').addEventListener('click', () => {
+    registerContainer.style.display = 'none'; // Oculta el contenedor de registro
+    loginContainer.style.display = 'block'; // Muestra el contenedor de inicio de sesión
+});
+
+// Registro de usuario
+document.getElementById('registerForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Evita el envío del formulario
+
+    // Obtener valores del formulario de registro
+    const nombres = document.getElementById('nombres').value.trim();
+    const apellidos = document.getElementById('apellidos').value.trim();
+    const email = document.getElementById('registerEmail').value.trim();
+    const password = document.getElementById('registerPassword').value;
+    const genero = document.getElementById('genero').value;
+
+    // Guardar datos del usuario en localStorage
+    const usuario = { nombres, apellidos, email, password, genero };
+    localStorage.setItem(email, JSON.stringify(usuario));
+
+    alert('¡Cuenta creada exitosamente! Por favor, inicia sesión.');
+    document.getElementById('registerForm').reset(); // Limpia el formulario de registro
+
+    // Cambiar a la vista de inicio de sesión
+    registerContainer.style.display = 'none';
+    loginContainer.style.display = 'block';
+});
+
+// Inicio de sesión
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Evita el envío del formulario
+
+    // Obtener valores del formulario de inicio de sesión
+    const email = document.getElementById('loginEmail').value.trim();
+    const password = document.getElementById('loginPassword').value;
+
+    // Recuperar datos del usuario desde localStorage
+    const usuario = JSON.parse(localStorage.getItem(email));
+
+    if (usuario && usuario.password === password) {
+        alert(`¡Bienvenido, ${usuario.nombres}!`);
+        window.location.href = 'principal.html'; // Redirige a la página principal
+    } else {
+        alert('Correo o contraseña incorrectos.');
+    }
+});
+
+
+
