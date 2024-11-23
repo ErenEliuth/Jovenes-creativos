@@ -4,3 +4,7 @@ function cerrarSesion() {
         window.location.href = "index.html";
     }
 }
+
+document.querySelector(".more-destinations").addEventListener("click", function() {
+    window.location.href = "misdestinos.html";
+});
