@@ -5,6 +5,3 @@ function cerrarSesion() {
     }
 }
 
-document.querySelector(".more-destinations").addEventListener("click", function() {
-    window.location.href = "misdestinos.html";
-});
