@@ -1,48 +1,368 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Principal</title>
-    <link rel="stylesheet" href="principal.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tourly - Travel agancy</title>
+
+  
+  <link rel="shortcut icon" href="" type="image/svg+xml">
+
+  
+  <link rel="stylesheet" href="principal.css">
+
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
 </head>
-<body>
-    <header>
-        <nav class="menu">
-            <div class="logo">
-                <img src="logo.png" alt="Logo" />
-            </div>
-            <ul class="menu-center">
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Nosotros</a></li>
-                <li><a href="#">Viajes</a></li>
-                <li><a href="#">Contacto</a></li>
-            </ul>
-            <div class="menu-right">
-                <a href="#" id="cerrar-sesion">Cerrar Sesión</a>
-            </div>
-        </nav>
-    </header>
 
-    <!-- Imagen de fondo con texto -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>¡Explora el Mundo con Nosotros!</h1>
-            <p>Descubre lugares increíbles y crea recuerdos inolvidables.</p>
-            <a href="#viajes" class="btn">Explorar Destinos</a>
+<body id="top">
+
+  <header class="header" data-header>
+
+
+        <div class="header-btn-group">
+
+          <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
+            <ion-icon name="menu-outline"></ion-icon>
+          </button>
+
         </div>
-    </section>
-    
-    <main>
-        <section id="destinos">
-            <h1>Destinos Turísticos</h1>
-            <div id="destinos-container">
-                <!-- Aquí se cargarán los destinos desde la API -->
-            </div>
-        </section>
-    </main>
-    
 
-    <script src="principal.js"></script>
+      </div>
+    </div>
+
+    <div class="header-bottom">
+      <div class="container">
+
+        <ul class="social-list">
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+    
+            
+          <ul class="navbar-list">
+
+            <li>
+              <a href="#home" class="navbar-link" data-nav-link>home</a>
+            </li>
+
+            
+
+            <li>
+              <a href="#destination" class="navbar-link" data-nav-link>Destinos Populares</a>
+            </li>
+
+            <li>
+                <a href="crear-destinos.html" class="navbar-link" data-nav-link>Subir Destinos</a>
+            </li>
+
+            <li>
+              <a href="#gallery" class="navbar-link" data-nav-link>Galeria</a>
+            </li>
+
+            <li>
+              <a href="#contact" class="navbar-link" data-nav-link>Contactanos</a>
+            </li>
+
+          </ul>
+
+        </nav>
+
+        <button class="btn btn-primary" onclick="cerrarSesion()">Cerrar Sesion</button>
+
+      </div>
+    </div>
+
+  </header>
+
+
+  <main>
+    <article>
+
+      <!-- 
+        - #MEDIO
+      -->
+
+      <section class="hero" id="home">
+        <div class="container">
+
+          <h2 class="h1 hero-title">Viaje para explorar el mundo</h2>
+
+          <p class="hero-text"> 
+            El mundo es un libro de infinitas páginas esperando ser descubiertas. Cada viaje es una nueva aventura que transforma tu vida y expande tus horizontes más allá de lo imaginado.
+          </p>
+
+          
+
+        </div>
+      </section>
+
+
+      <!-- 
+        - #DESTINOS POPULARES
+      -->
+
+      <section class="popular" id="destination">
+        <div class="container">
+
+
+          <h2 class="h2 section-title">Destinos Populares</h2>
+
+          <p class="section-text">
+            Descubre los lugares más emblemáticos y cautivadores del planeta, donde millones de viajeros han encontrado experiencias inolvidables.
+          </p>
+
+          <ul class="popular-list">
+
+            <li>
+              <div class="popular-card">
+
+                <figure class="card-img">
+                  <img src="/Img/Viaje sa.jpeg" alt="Venecia, Italia" loading="lazy">
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="card-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+
+                  <p class="card-subtitle">
+                    <a href="#">Italia</a>
+                  </p>
+
+                  <h3 class="h3 card-title">
+                    <a href="#">Venecia</a>
+                  </h3>
+
+                  <p class="card-text">
+                    Me parece curioso que haya agua por todas partes literalmente.
+                  </p>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="popular-card">
+
+                <figure class="card-img">
+                  <img src="/Img/9-de-agosto.jpg" alt="Beranga, España" loading="lazy">
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="card-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+
+                  <p class="card-subtitle">
+                    <a href="#">España</a>
+                  </p>
+
+                  <h3 class="h3 card-title">
+                    <a href="#">Beranga</a>
+                  </h3>
+
+                  <p class="card-text">
+                    Pueblo tradicional y unico.
+                  </p>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="popular-card">
+
+                <figure class="card-img">
+                  <img src="/Img/tokyoGettyImages-1031467664.webp" alt="Tokyo, japan" loading="lazy">
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="card-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+
+                  <p class="card-subtitle">
+                    <a href="#">Japon</a>
+                  </p>
+
+                  <h3 class="h3 card-title">
+                    <a href="#">Tokio</a>
+                  </h3>
+
+                  <p class="card-text">
+                    Me encanto su moda y sus zonas de compras.
+                  </p>
+
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+          <button class="btn btn-primary">More destintion</button>
+
+        </div>
+      </section>
+
+      <!-- 
+        - #GALERIA
+      -->
+
+      <section class="gallery" id="gallery">
+        <div class="container">
+
+          <p class="section-subtitle">GALERIA DE FOTOS</p>
+
+          <h2 class="h2 section-title">Fotos de viajeros</h2>
+
+          <p class="section-text">
+            Momentos auténticos compartidos por viajeros que transforman sus experiencias en recuerdos eternos.
+Una galería de emociones y destinos que te inspirarán a crear tus propias memorias..
+          </p>
+
+          <ul class="gallery-list">
+
+            <li class="gallery-item">
+              <figure class="gallery-image">
+                <img src="/Img/Viaje 1.jpeg" alt="Gallery image">
+              </figure>
+            </li>
+
+            <li class="gallery-item">
+              <figure class="gallery-image">
+                <img src="/Img/Viaje 6.jpeg" alt="Gallery image">
+              </figure>
+            </li>
+
+            <li class="gallery-item">
+              <figure class="gallery-image">
+                <img src="/Img/viaje 10.jpg" alt="Gallery image">
+              </figure>
+            </li>
+
+            <li class="gallery-item">
+              <figure class="gallery-image">
+                <img src="/Img/Viaje 4.jpeg" alt="Gallery image">
+              </figure>
+            </li>
+
+            <li class="gallery-item">
+              <figure class="gallery-image">
+                <img src="/Img/Viaje 5.jpeg" alt="Gallery image">
+              </figure>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+      <!-- 
+        - #Contacto
+      -->
+
+      <section class="cta" id="contact">
+        <div class="container">
+
+          <div class="cta-content">
+            <p class="section-subtitle">Informacion</p>
+
+            <h2 class="h2 section-title">Jovenes Creativos 2024</h2>
+
+            <ul>
+
+                <li class="contact-item">
+                  <ion-icon name="call-outline"></ion-icon>
+    
+                  <a href="tel:+57 3155374668" class="contact-link">+57 3155374668</a>
+                </li>
+    
+                <li class="contact-item">
+                  <ion-icon name="mail-outline"></ion-icon>
+    
+                  <a href="erennavas4@gmail.com" class="contact-link">erennavas4@gmail.com</a>
+                </li>
+    
+                <li class="contact-item">
+                  <ion-icon name="location-outline"></ion-icon>
+    
+                  <address>Colombia, Barranquilla</address>
+                </li>
+    
+              </ul>
+    
+            </p>
+          </div>
+
+          <button class="btn btn-secondary">Contactame!</button>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+
+
+
+
+
+
+
+  <!-- 
+    - Link del JS
+  -->
+  <script src="principal.js"></script>
+
+  <!-- 
+    - Links para iconos del inicio
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
 </body>
+
 </html>
