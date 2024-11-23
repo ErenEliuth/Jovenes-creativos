@@ -296,7 +296,7 @@ body { background: var(--white); }
 \*-----------------------------------*/
 
 .hero {
-  background-image: url("/Img/kelly-zhang-_SDar1E6_lE-unsplash.jpg");
+  background-image: url("./Img/kelly-zhang-_SDar1E6_lE-unsplash.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
